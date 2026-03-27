@@ -753,13 +753,22 @@ function startScroll(texts, fontSize, speed, colors, vertical) {
   }
 
   // resize対応（画面回転時に再計測）
+  // Safari は resize の発火が不安定なため orientationchange + 複数回の遅延再計測で補完
   let resizeTimer = null;
   function onResize() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(recalcLayout, 150);
   }
+  function onOrientationChange() {
+    // Safari向け: 回転アニメーション中は値が不正確なため段階的に再計測
+    setTimeout(recalcLayout, 100);
+    setTimeout(recalcLayout, 300);
+    setTimeout(recalcLayout, 600);
+  }
   window.removeEventListener('resize', onResize);
   window.addEventListener('resize', onResize);
+  window.removeEventListener('orientationchange', onOrientationChange);
+  window.addEventListener('orientationchange', onOrientationChange);
 
   document.fonts.ready.then(() => {
     recalcLayout();
