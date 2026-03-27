@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="64" fill="#111"/>
-  <text x="256" y="200" text-anchor="middle" font-family="sans-serif" font-size="160" font-weight="bold" fill="#ffe600">憲法</text>
-  <rect x="56" y="260" width="400" height="8" rx="4" fill="#ffe600" opacity="0.6"/>
-  <text x="256" y="370" text-anchor="middle" font-family="sans-serif" font-size="80" font-weight="bold" fill="#00ff41">電光</text>
-  <text x="256" y="450" text-anchor="middle" font-family="sans-serif" font-size="60" fill="#888">掲示板</text>
+  <text x="256" y="270" text-anchor="middle" font-family="sans-serif" font-size="208" font-weight="bold" fill="#ffe600">憲法</text>
+  <rect x="56" y="310" width="400" height="6" rx="3" fill="#ffe600" opacity="0.5"/>
+  <text x="256" y="430" text-anchor="middle" font-family="sans-serif" font-size="86" font-weight="bold">
+    <tspan fill="#00ff41">電</tspan><tspan fill="#00cfff">光</tspan><tspan fill="#ff8c00">掲</tspan><tspan fill="#b388ff">示</tspan><tspan fill="#ff69b4">板</tspan>
+  </text>
 </svg>
