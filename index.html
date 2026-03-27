@@ -444,11 +444,11 @@ if ('serviceWorker' in navigator) {
   </div>
 
   <div class="setting-group" style="display:flex; align-items:center; gap:8px;">
-    <label class="group-title" style="margin-bottom:0; white-space:nowrap; font-size:12px;">ﾌﾘｰﾒｯｾｰｼﾞ①</label>
+    <label class="group-title" style="margin-bottom:0; white-space:nowrap; font-size:12px;">ﾒｯｾｰｼﾞ①</label>
     <input type="text" id="freeMsg1" style="flex:1; background:#0a0a0a; color:#eee; border:1px solid #333; border-radius:6px; padding:6px 8px; font-size:13px; font-family:'Noto Sans JP',sans-serif;" placeholder="流したいメッセージを入力">
   </div>
   <div class="setting-group" style="display:flex; align-items:center; gap:8px;">
-    <label class="group-title" style="margin-bottom:0; white-space:nowrap; font-size:12px;">ﾌﾘｰﾒｯｾｰｼﾞ②</label>
+    <label class="group-title" style="margin-bottom:0; white-space:nowrap; font-size:12px;">ﾒｯｾｰｼﾞ②</label>
     <input type="text" id="freeMsg2" style="flex:1; background:#0a0a0a; color:#eee; border:1px solid #333; border-radius:6px; padding:6px 8px; font-size:13px; font-family:'Noto Sans JP',sans-serif;" placeholder="流したいメッセージを入力">
   </div>
 
@@ -546,16 +546,16 @@ document.getElementById('btnRun').addEventListener('click', () => {
     return;
   }
   if (checked.length === 0 && freeText1 === '' && freeText2 === '') {
-    alert('条文を1つ以上選択するか、フリーメッセージ欄に入力してください');
+    alert('条文を1つ以上選択するか、メッセージ欄に入力してください');
     return;
   }
 
   const selected = [];
   if (freeText1 !== '') {
-    selected.push({ id: 'free1', label: 'FreeMsg1', text: freeText1, checkbox_label: '' });
+    selected.push({ id: 'free1', label: 'Msg1', text: freeText1, checkbox_label: '' });
   }
   if (freeText2 !== '') {
-    selected.push({ id: 'free2', label: 'FreeMsg2', text: freeText2, checkbox_label: '' });
+    selected.push({ id: 'free2', label: 'Msg2', text: freeText2, checkbox_label: '' });
   }
   selected.push(...ARTICLES.filter(a => checked.includes(a.id)));
   startScroll(selected, fontSize, speed, colors, vertical);
