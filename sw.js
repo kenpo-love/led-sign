@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kenpou-v1';
+const CACHE_NAME = 'V260327B';
 const ASSETS = [
   './',
   './index.html',
