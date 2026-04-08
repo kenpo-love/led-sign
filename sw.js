@@ -1,4 +1,4 @@
-const CACHE_NAME = 'V260405B';
+const CACHE_NAME = 'V260408A';
 const ASSETS = [
   './',
   './index.html',
@@ -24,6 +24,11 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
+  // GA/gtagのリクエストはService Workerを介さずネットワーク直送
+  if (e.request.url.includes('google-analytics.com') ||
+      e.request.url.includes('googletagmanager.com')) {
+    return;
+  }
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
   );
